@@ -5,7 +5,7 @@ Feature: User Login Feature
     Given user is on home page
     When user enter "<username>" and "<password>"
     And click on login button
-    Then Logged user should be "Mohammad Shokriyan"
+    Then Logged user should be "<expected>"
     And close browser
     Examples:
       | username   | password | expected           |

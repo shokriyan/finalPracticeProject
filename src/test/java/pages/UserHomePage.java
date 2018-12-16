@@ -8,11 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UserHomePage {
 	
+	WebDriver driver; 
+	
 	@FindBy (how = How.CSS, using ="td.headertext:nth-child(1)")
 	private WebElement loggedUser; 
 	
 	public UserHomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 	
 	public String loggedUserName() {

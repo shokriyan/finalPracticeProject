@@ -7,6 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features"
+,tags= {"@eventCreate"}
 , glue = { "stepDefinitions" }
 , dryRun = false
 , plugin = {"pretty", "html:test-output"

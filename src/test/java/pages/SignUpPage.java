@@ -10,11 +10,14 @@ import org.openqa.selenium.support.ui.Select;
 
 import utils.BaseClass;
 
-public class SignUpPage extends BaseClass{
+public class SignUpPage {
+	
+	WebDriver driver; 
 	
 	public SignUpPage(WebDriver driver) {
 		
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 		
 	}
 	
@@ -75,13 +78,13 @@ public class SignUpPage extends BaseClass{
 	
 	public void termCheckBox() {
 		if (!agreeTerms.isSelected()){
-			clickableWaits(agreeTerms, 2);
+			BaseClass.clickableWaits(agreeTerms, 2);
 		}
 	}
 	
 	public void clickOnSubmitButton() {
 		if (submitButton.isEnabled()) {
-			clickableWaits(submitButton, 10);
+			BaseClass.clickableWaits(submitButton, 10);
 		}
 	}
 	
@@ -89,7 +92,7 @@ public class SignUpPage extends BaseClass{
 		Actions action = new Actions(driver);
 		action.moveToElement(btnSubmit).build().perform();
 		if (!btnSubmit.isEnabled()) {
-			clickableWaits(btnSubmit, 10);
+			BaseClass.clickableWaits(btnSubmit, 10);
 		}
 	}
 	
@@ -100,7 +103,7 @@ public class SignUpPage extends BaseClass{
 	
 	public void ClickOnFinish() {
 		if (btnFinish.isEnabled()) {
-			clickableWaits(btnFinish, 5);
+			BaseClass.clickableWaits(btnFinish, 5);
 		}
 	}
 }

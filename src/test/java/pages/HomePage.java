@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.BaseClass;
 
-public class HomePage extends BaseClass{
+public class HomePage {
+	
+	WebDriver driver; 
 	
 	@FindBy (how = How.XPATH, using ="//a[contains(@href,'freecrm')]/img")
 	private WebElement homePageLogo;
@@ -20,11 +22,12 @@ public class HomePage extends BaseClass{
 	public WebElement password;
 	
 	@FindBy (how = How.XPATH, using = "//input[@value='Login']")
-	private WebElement btnlogin;
+	public WebElement btnlogin;
 	
 	
 	public HomePage (WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 	
 	
@@ -34,7 +37,7 @@ public class HomePage extends BaseClass{
 	}
 	
 	public void clickOnLogin() {
-		clickableWaits(btnlogin, 30);
+		BaseClass.clickableWaits(btnlogin, 30);
 	}
 	
 
